@@ -1,208 +1,105 @@
-# 🔷 Hexagonal Game of Life
+# hexagonal-life
 
-![Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit-blue?style=for-the-badge)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit-blue?style=for-the-badge)](https://mayank-dev-15.github.io/hexagonal-life)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Language](https://img.shields.io/badge/Language-HTML/CSS/JS-green)
 
-## 🚀 Live Demo
+Conway's Game of Life on a hexagonal grid with multiple rule sets, preset patterns, age coloring, and zoom/pan.
 
-**[View Demo](https://mayank-dev-15.github.io/hexagonal-life)** — hosted on GitHub Pages
-
-
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Canvas](https://img.shields.io/badge/Canvas-00C853?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
-[![Cellular Automata](https://img.shields.io/badge/Cellular%20Automata-6A1B9A?style=for-the-badge)](https://en.wikipedia.org/wiki/Cellular_automaton)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
-
-> Conway's Game of Life — reimagined on a hexagonal grid. Explore emergent complexity on a tessellated plane.
-
-Hexagonal Life takes the classic cellular automaton and gives it a geometric twist. Instead of square cells with 8 neighbors, each hexagonal cell has **6 neighbors** — fundamentally changing the behavior of every rule set and producing stunning, organic patterns that feel more natural than their square-grid counterparts.
+`cellular-automata` `game-of-life` `hexagonal` `canvas` `simulation`
 
 ---
 
 ## ✨ Features
 
-| Feature | Description |
-|---|---|
-| 🔷 **Hex Grid** | Smooth hexagonal tessellation rendered on HTML5 Canvas |
-| 🎯 **Custom Rule Sets** | Define birth/survival conditions with an intuitive notation |
-| 📐 **Multiple Presets** | Classic Life, Amoeba, Coral, Crystal, and more |
-| 🎨 **Cell Coloring** | Age-based coloring — young cells glow, old cells fade |
-| 🖱️ **Interactive Drawing** | Click and drag to paint cells onto the grid |
-| ⏩ **Speed Control** | Adjust simulation speed from 1x to 60x |
-| 🔄 **Wrap / Bounded** | Toggle toroidal wrapping or hard boundaries |
-| 📸 **Export** | Save the current grid state as PNG or JSON |
-| 📊 **Statistics** | Live population count, generation counter, and density graph |
+- Hexagonal grid rendering on canvas
+- Click to toggle cells, drag to paint multiple
+- Play/pause, step, clear, randomize controls
+- Multiple rule sets (Standard, HighLife, Day & Night, Custom)
+- Hex-adapted preset patterns (gliders, oscillators, still lifes)
+- Age-based cell coloring (newborn → old)
+- Population and generation counters
+- Zoom and pan navigation
+- Export current state as PNG
+- Info panel explaining hexagonal cellular automata
 
 ---
 
-## 📐 Rules
+## 🚀 Live Demo
 
-Like Conway's original, Hexagonal Life uses **Birth** and **Survival** rules — but adapted for 6 neighbors instead of 8.
+**[View Demo →](https://mayank-dev-15.github.io/hexagonal-life)**
 
-### Hex Neighborhood
-
-Each hexagonal cell has exactly **6 neighbors**:
-
-```
-    ┌───┐ ┌───┐
-    │ N │ │ NE│
-┌───┼───┼─┼───┤
-│ NW│ ● │ │ E │
-└───┼───┼─┼───┤
-    │ SW│ │ S │
-    └───┘ └───┘
-```
-
-### Rule Notation
-
-Rules are written as `B/S` — which neighbor counts trigger **Birth** and **Survival**:
-
-- **B** (Birth): A dead cell becomes alive if it has exactly N living neighbors
-- **S** (Survival): A living cell stays alive if it has exactly N living neighbors
-
-| Rule | Notation | Behavior |
-|---|---|---|
-| **Hex Life** | B2/S345 | Balanced — good mix of growth and stability |
-| **Amoeba** | B246/S135 | Organic, blob-like growth patterns |
-| **Coral** | B3/S45678 | Slow, branching coral-like structures |
-| **Crystal** | B3678/S34678 | Rigid, geometric crystal growth |
-| **Classic** | B3/S23 | Direct hex adaptation of Conway's original |
-| **Maze** | B3/S12345 | Dense, maze-like patterns with long corridors |
-
-### How It Differs from Square Grids
-
-| Property | Square (8 neighbors) | Hex (6 neighbors) |
-|---|---|---|
-| **Connectivity** | 8 directions | 6 directions |
-| **Symmetry** | 4-fold rotational | 6-fold rotational |
-| **Distance** | Chebyshev metric | Axial metric |
-| **Patterns** | Sharp, angular | Smooth, organic |
-| **Gliders** | Common } Rarer, more complex |
-| **Density** | Higher clustering | More even spread |
-
-The hex grid's **6-fold symmetry** produces patterns that look more like natural phenomena — think honeycombs, basalt columns, or biological cell structures.
+The demo is hosted on GitHub Pages. No installation needed — just click and explore.
 
 ---
 
-## 🎯 Presets
+## 🛠️ Tech Stack
 
-| Preset | Rule | Description |
-|---|---|---|
-| 🌊 **Hex Life*2 | B2/S345 | The default — balanced and exploratory |
-| 🦠 **Amoeba** | B246/S135 | Organic blobs that merge and split |
-| 🪸 **Coral** | B3/S45678 | Slow-growing branching structures |
-| 💎 **Crystal** | B3678/S34678 | Geometric, rigid growth patterns |
-| 🏰 **Maze** | B3/S12345 | Dense mazes with long corridors |
-| 🔥 **Chaos** | B1/S12 | Explosive, chaotic growth |
-| ❄️ **Ice** | B3678/S235678 | Frozen, stable crystal lattices |
+- HTML5 Canvas 2D
+- Vanilla JavaScript
+- CSS3
+- Cellular automata logic
 
 ---
 
-## 🎮 Controls
-
-### Simulation
-
-| Control | Action |
-|---|---|
-| `Space` | Play / Pause |
-| `N` | Step forward one generation |
-| `R` | Randomize grid |
-| `C` | Clear grid |
-| `G` | Toggle grid lines |
-
-### Drawing
-
-| Control | Action |
-|---|---|
-| `Click` | Toggle cell |
-| `Click + Drag` | Paint cells |
-| `Right-click + Drag` | Erase cells |
-| `Scroll` | Zoom in/out |
-| `Middle-click + Drag` | Pan the grid |
-
-### Settings
-
-| Control | Action |
-|---|---|
-| `+ / -` | Increase / Decrease speed |
-| `W` | Toggle wrap mode |
-| `L` | Toggle cell age coloring |
-| `S` | Export screenshot (PNG) |
-| `E` | Export grid state (JSON) |
-
----
-
-## 🚀 Installation
-
-Zero dependencies — runs entirely in the browser.
+## 📦 Installation
 
 ```bash
-# Clone the repository
 git clone https://github.com/mayank-dev-15/hexagonal-life.git
+cd hexagonal-life
+```
 
-# Open in your browser
+```bash
 cd hexagonal-life
 open index.html
 ```
 
-Or simply open `index.html` directly from your file system.
+---
+
+## 💡 Usage
+
+- Click cells to toggle alive/dead
+- Click and drag to paint multiple cells
+- Space to play/pause
+- R to randomize
+- Scroll to zoom
+- Arrow keys to pan
+- 1-7 for preset patterns
 
 ---
 
-## 🎮 Usage
+## 📁 Project Structure
 
-1. **Choose a preset** from the dropdown menu (or define custom rules)
-2. **Draw cells** by clicking and dragging on the grid
-3. **Press Space** to start the simulation
-4. **Adjust speed** with `+` / `-` keys
-5. **Experiment** with different rule sets to discover new patterns
-6. **Export** your favorite patterns as PNG or JSON
-
-**Tips:**
-- Start with the **Hex Life** preset and a small cluster of cells
-- Try the **Crystal** preset for mesmerizing geometric growth
-- Use **Maze** with a randomized grid for complex labyrinths
-- Toggle **wrap mode** to create seamless infinite patterns
+```
+hexagonal-life/
+├── README.md          # This file
+├── Demo.md            # Demo documentation
+├── LICENSE            # MIT License
+└── ...                # Source files
+```
 
 ---
 
-## 🔬 About Cellular Automata
+## 🤝 Contributing
 
-A **cellular automaton** is a discrete model studied in mathematics, physics, and theoretical biology. It consists of:
-
-- **Grid** — a regular lattice of cells (square, hexagonal, etc.)
-- **States** — each cell is in one of a finite number of states (alive/dead)
-- **Neighborhood** — a definition of which cells are "neighbors"
-- **Rules** — a function that determines the next state based on current state and neighbors
-
-### History
-
-- **1940s** — Stanislaw Ulam and John von Neumann pioneer the concept
-- **1970** — John Conway invents the Game of Life (square grid, B3/S23)
-- **1980s** — Stephen Wolfram classifies 1D cellular automata into 4 classes
-- **2000s+** — Hexagonal variants gain popularity for their natural aesthetics
-
-### Why Hexagons?
-
-Hexagonal grids are the **most efficient way to tile a plane** with equal-area cells while minimizing perimeter. They appear everywhere in nature:
-
-- 🐝 Honeycombs
-- 🪨 Basalt columns (Giant's Causeway)
-- 🧬 Biological cell packing
-- 🌍 Geographic mapping (H3, S2)
-- 🎮 Board games (Settlers of Catan, Civilization)
-
-In cellular automata, hex grids produce **more isotropic** (directionally uniform) behavior because all 6 neighbors are equidistant — unlike square grids where diagonal neighbors are √2 times farther.
+Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License.
 
 ---
 
-<p align="center">
-  Built with ❤️ by <a href="https://github.com/mayank-dev-15">mayank-dev-15</a> — exploring emergence, one hex at a time.
-</p>
+## 🔗 Links
+
+- **Live Demo:** [https://mayank-dev-15.github.io/hexagonal-life](https://mayank-dev-15.github.io/hexagonal-life)
+- **Source Code:** [github.com/mayank-dev-15/hexagonal-life](https://github.com/mayank-dev-15/hexagonal-life)
+- **Issues:** [github.com/mayank-dev-15/hexagonal-life/issues](https://github.com/mayank-dev-15/hexagonal-life/issues)
+- **Releases:** [github.com/mayank-dev-15/hexagonal-life/releases](https://github.com/mayank-dev-15/hexagonal-life/releases)
+- **Demo Docs:** [Demo.md](https://github.com/mayank-dev-15/hexagonal-life/blob/main/Demo.md)
+
+---
+
+*Built with ❤️ by [Mayank Basena](https://github.com/mayank-dev-15) · 15 · GSoC 2027 Aspirant*
